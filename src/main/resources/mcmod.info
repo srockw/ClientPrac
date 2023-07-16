@@ -1,0 +1,18 @@
+[
+  {
+    "modid": "${modid}",
+    "name": "ClientPrac",
+    "description": "Creates a client-sided entity that can be used to move around with no consequences.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "https://github.com/romangraef/Forge1.8.9Template/",
+    "updateUrl": "",
+    "authorList": [
+      "Srock"
+    ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
