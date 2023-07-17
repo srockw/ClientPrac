@@ -6,13 +6,14 @@
   "mixins": [
     "MixinEntity",
     "MixinEntityLivingBase",
-    "MixinNetworkManager"
+    "MixinNetworkManager",
   ],
   "client": [
     "MixinEntityPlayerSP",
     "MixinEntityRenderer",
     "MixinNetHandlerPlayClient",
     "MixinPlayerControllerMP",
-    "MixinRenderGlobal"
+    "MixinRenderGlobal",
+    "MixinRenderManager"
   ]
 }
