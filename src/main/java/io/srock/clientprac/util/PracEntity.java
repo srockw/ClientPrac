@@ -1,6 +1,7 @@
 package io.srock.clientprac.util;
 
 import com.mojang.authlib.GameProfile;
+import io.srock.clientprac.config.Config;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.network.NetHandlerPlayClient;
@@ -87,13 +88,15 @@ public class PracEntity extends EntityPlayerSP {
     }
 
     public void onRightClick(ItemStack item) {
+        String feedback = "";
+
         if (ItemStack.areItemStacksEqual(item, CheckpointItem)) {
             this.goToCheckpoint();
-            this.addChatMessage(new ChatComponentText("§aTeleported back to checkpoint!"));
+            feedback = "§aTeleported back to checkpoint!";
         }
         else if (ItemStack.areItemStacksEqual(item, SetCheckpointItem)) {
             this.checkpoint = new PracPosition(this);
-            this.addChatMessage(new ChatComponentText("§aSet new checkpoint!"));
+            feedback = "§aSet new checkpoint!";
         }
         else if (ItemStack.areItemStacksEqual(item, ToggleFlyItem)) {
             this.capabilities.allowFlying = !this.capabilities.allowFlying;
@@ -102,7 +105,11 @@ public class PracEntity extends EntityPlayerSP {
                 this.capabilities.isFlying = false;
             }
 
-            this.addChatMessage(new ChatComponentText("§aToggled flight!"));
+            feedback = "§aToggled flight!";
+        }
+
+        if (Config.sendFeedback) {
+            this.addChatMessage(new ChatComponentText(feedback));
         }
     }
 }

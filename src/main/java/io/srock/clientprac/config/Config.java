@@ -21,6 +21,7 @@ public class Config {
 
     public static void initConfig() {
        initProperty("hideEntities", "false", Property.Type.BOOLEAN);
+       initProperty("sendFeedback", "false", Property.Type.BOOLEAN);
 
        update();
     }
@@ -31,7 +32,9 @@ public class Config {
         }
 
         hideEntities = getDefaultCategory().get("hideEntities").getBoolean();
+        sendFeedback = getDefaultCategory().get("sendFeedback").getBoolean();
     }
 
     public static boolean hideEntities = false;
+    public static boolean sendFeedback = false;
 }
