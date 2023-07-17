@@ -12,15 +12,15 @@ public class Config {
         return config.getCategory(Configuration.CATEGORY_CLIENT);
     }
 
-    private static void initProperty(String key, String displayName, String defaultValue, Property.Type type) {
+    private static void initProperty(String key, String defaultValue, Property.Type type) {
         if (!getDefaultCategory().containsKey(key))
-            getDefaultCategory().put(key, new Property(displayName, defaultValue, type));
+            getDefaultCategory().put(key, new Property(key, defaultValue, type));
 
         getDefaultCategory().get(key).setDefaultValue(defaultValue);
     }
 
     public static void initConfig() {
-       initProperty("hideEntities", "Hide Entities", "false", Property.Type.BOOLEAN);
+       initProperty("hideEntities", "false", Property.Type.BOOLEAN);
 
        update();
     }

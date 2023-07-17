@@ -1,6 +1,5 @@
 package io.srock.clientprac;
 
-import io.srock.clientprac.config.ClientPracConfigGui;
 import io.srock.clientprac.config.Config;
 import io.srock.clientprac.util.PracEntity;
 import jline.internal.Nullable;
@@ -8,9 +7,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.util.MovementInput;
 import net.minecraft.util.MovementInputFromOptions;
-import net.minecraftforge.client.event.GuiOpenEvent;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
